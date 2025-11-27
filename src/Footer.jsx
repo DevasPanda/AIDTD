@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function Footer({ setShowPrivacyModal, setShowTermsModal, setShowContactModal }) {
+export default function Footer({
+  setShowPrivacyModal,
+  setShowTermsModal,
+  setShowContactModal,
+}) {
   return (
     <footer className="bg-[#141819] text-slate-300 pt-16 pb-8 mt-20">
       <div className="max-w-6xl mx-auto px-6">
@@ -48,21 +52,51 @@ export default function Footer({ setShowPrivacyModal, setShowTermsModal, setShow
               <li className="hover:text-cyan-400 transition cursor-pointer">
                 Careers
               </li>
+
+              {/* Contact */}
               <li
-                onClick={() => setShowContactModal && setShowContactModal(true)}
-                className="hover:text-cyan-400 transition cursor-pointer"
+                onClick={
+                  setShowContactModal
+                    ? () => setShowContactModal(true)
+                    : undefined
+                }
+                className={
+                  setShowContactModal
+                    ? "hover:text-cyan-400 transition cursor-pointer"
+                    : "text-slate-500"
+                }
               >
                 Contact
               </li>
+
+              {/* Privacy */}
               <li
-                onClick={() => setShowPrivacyModal && setShowPrivacyModal(true)}
-                className="hover:text-cyan-400 transition cursor-pointer"
+                onClick={
+                  setShowPrivacyModal
+                    ? () => setShowPrivacyModal(true)
+                    : undefined
+                }
+                className={
+                  setShowPrivacyModal
+                    ? "hover:text-cyan-400 transition cursor-pointer"
+                    : "text-slate-500"
+                }
               >
                 Privacy Policy
               </li>
+
+              {/* Terms */}
               <li
-                onClick={() => setShowTermsModal && setShowTermsModal(true)}
-                className="hover:text-cyan-400 transition cursor-pointer"
+                onClick={
+                  setShowTermsModal
+                    ? () => setShowTermsModal(true)
+                    : undefined
+                }
+                className={
+                  setShowTermsModal
+                    ? "hover:text-cyan-400 transition cursor-pointer"
+                    : "text-slate-500"
+                }
               >
                 Terms &amp; Conditions
               </li>

@@ -2,7 +2,7 @@
 import React from "react";
 import FadeInSection from "./FadeInSection";
 import Navbar from "./Navbar";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 export default function Internships() {
   return (

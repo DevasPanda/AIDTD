@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FadeInSection from "./FadeInSection";
 import TechStackStrip from "./TechStackStrip";
 import Navbar from "./Navbar";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 export default function Home() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
