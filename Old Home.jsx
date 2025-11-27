@@ -10,7 +10,7 @@ export default function Home() {
       <div className="relative">
         <header className="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
           <div className="flex items-center space-x-2">
-            <img src="/DigynixLogo.png" alt="Digynix Logo" className="h-14 w-auto" />
+            <img src="/AIDT&DLogo.png" alt="AIDT&D Logo" className="h-14 w-auto" />
           </div>
           <nav className="space-x-6 text-base font-semibold text-gray-700">
             <a href="/" className="px-3 py-2 rounded-md hover:bg-orange-50 hover:text-orange-600 transition-all">Home</a>
@@ -22,7 +22,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="text-center py-20 px-4 bg-[url('/ai-tech-ribbon.png')] bg-cover bg-center text-white relative overflow-hidden">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Launch Your Digital Career with Digynix</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">Launch Your Digital Career with AIDT&D</h1>
         <p className="text-lg md:text-2xl mb-6 max-w-2xl mx-auto">
           Learn AI, Automation, and Web Technologies with hands-on projects and real-world mentorship.
         </p>
@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Highlights */}
       <section className="py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-8">Why Choose Digynix?</h2>
+        <h2 className="text-3xl font-bold mb-8">Why Choose AIDT&D?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="p-6 rounded-2xl shadow-lg bg-orange-100">
             <h3 className="text-xl font-semibold mb-2">Project-Based Learning</h3>
@@ -105,11 +105,11 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-10">What Our Students Say</h2>
         <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
           <div className="bg-white p-6 rounded-2xl shadow">
-            <p className="italic mb-2">“Digynix gave me my first real-world project in AI. The mentorship helped me land a job.”</p>
+            <p className="italic mb-2">“AIDT&D gave me my first real-world project in AI. The mentorship helped me land a job.”</p>
             <p className="font-semibold">— Priya Sharma, AI Intern</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow">
-            <p className="italic mb-2">“I built a resume parser agent and added it to my portfolio. Digynix helped me stand out.”</p>
+            <p className="italic mb-2">“I built a resume parser agent and added it to my portfolio. AIDT&D helped me stand out.”</p>
             <p className="font-semibold">— Arjun Patel, Automation Intern</p>
           </div>
         </div>
@@ -137,14 +137,14 @@ export default function Home() {
       {/* Call to Action */}
       <section className="py-16 px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="mb-6 text-lg">Join hundreds of learners building real AI tools at Digynix.</p>
+        <p className="mb-6 text-lg">Join hundreds of learners building real AI tools at AIDT&D.</p>
         <a href="/internships#apply-form"><button className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-2xl shadow hover:bg-orange-600 transition">Start Learning</button></a>
       </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 text-sm py-6 text-center mt-10">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center px-4">
-          <p>© {new Date().getFullYear()} Digynix. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AIDT&D. All rights reserved.</p>
           <div className="space-x-4 mt-2 sm:mt-0">
             <a href="#" className="hover:text-white">Terms</a>
             <button onClick={() => setShowPrivacyModal(true)} className="hover:text-white underline">Privacy</button>
@@ -166,7 +166,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-4">Privacy Policy</h2>
             <div className="text-gray-700 text-sm space-y-4">
               <p>
-                At Digynix, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information.
+                At AIDT&D, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information.
               </p>
 
               <h3 className="font-semibold">1. Information We Collect</h3>
@@ -195,7 +195,7 @@ export default function Home() {
               <p>We may update this policy periodically. Continued use of our services constitutes acceptance of the revised policy.</p>
 
               <h3 className="font-semibold">8. Contact</h3>
-              <p>If you have any questions regarding this policy, please contact us at privacy@digynix.com.</p>
+              <p>If you have any questions regarding this policy, please contact us at privacy@AIDT&D.com.</p>
             </div>
             <div className="text-right mt-6">
               <button

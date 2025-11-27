@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-3">
           <div className="aidtd-logo-wrapper">
             <img
-              src="/DigynixLogo.png"
+              src="/AIDTDLogo.png"
               alt="AIDT&D Logo"
               className="h-9 w-auto md:h-10"
             />
