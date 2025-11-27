@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FadeInSection from "./FadeInSection";
 import TechStackStrip from "./TechStackStrip";
+import Navbar from "./Navbar";
+import Footer from "./footer";
 
 export default function Home() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
@@ -8,48 +10,8 @@ export default function Home() {
   const [showTermsModal, setShowTermsModal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
-      {/* Navbar */}
-      <div className="relative">
-        <header className="flex justify-between items-center px-6 py-4 bg-slate-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
-          <div className="flex items-center space-x-3">
-            <img
-              src="/DigynixLogo.png"
-              alt="AIDT&D Logo"
-              className="h-10 w-auto"
-            />
-            <span className="text-xs md:text-sm uppercase tracking-[0.25em] text-cyan-400">
-              AI • AUTOMATION • TRAINING
-            </span>
-          </div>
-          <nav className="space-x-3 md:space-x-6 text-sm md:text-base font-medium">
-            <a
-              href="#hero"
-              className="px-3 py-2 rounded-full hover:bg-slate-800 hover:text-cyan-300 transition-all"
-            >
-              Home
-            </a>
-            <a
-              href="#services"
-              className="px-3 py-2 rounded-full hover:bg-slate-800 hover:text-cyan-300 transition-all"
-            >
-              AI & Automation
-            </a>
-            <a
-              href="/courses"
-              className="px-3 py-2 rounded-full hover:bg-slate-800 hover:text-cyan-300 transition-all"
-            >
-              Courses
-            </a>
-            <a
-              href="/internships"
-              className="px-3 py-2 rounded-full hover:bg-slate-800 hover:text-cyan-300 transition-all"
-            >
-              Internships
-            </a>
-          </nav>
-        </header>
-      </div>
+     <div className="min-h-screen bg-slate-950 text-slate-50">
+    <Navbar />      
 
       {/* Hero Section */}
       <section
@@ -273,79 +235,11 @@ export default function Home() {
       </FadeInSection>
 
       {/* Footer */}
-      <footer className="bg-[#141819] text-slate-300 pt-16 pb-8 mt-20">
-      <div className="max-w-6xl mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-      
-      {/* Brand Column */}
-      <div>
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-2xl font-bold text-white">✦</span>
-          <span className="text-xl font-semibold text-white">AIDT&amp;D</span>
-        </div>
-        <p className="text-sm leading-relaxed text-slate-400">
-          Empowering the future with AI and automation excellence.
-        </p>
-      </div>
-
-      {/* Services */}
-      <div>
-        <h3 className="text-white font-semibold mb-4">Services</h3>
-        <ul className="space-y-2 text-sm">
-          <li className="hover:text-cyan-400 transition">AI Training</li>
-          <li className="hover:text-cyan-400 transition">RPA Consulting</li>
-          <li className="hover:text-cyan-400 transition">IDP Solutions</li>
-          <li className="hover:text-cyan-400 transition">Integration Services</li>
-        </ul>
-      </div>
-
-      {/* Technologies */}
-      <div>
-        <h3 className="text-white font-semibold mb-4">Technologies</h3>
-        <ul className="space-y-2 text-sm">
-          <li className="hover:text-cyan-400 transition">Automation Anywhere</li>
-          <li className="hover:text-cyan-400 transition">UiPath</li>
-          <li className="hover:text-cyan-400 transition">Power Platform</li>
-          <li className="hover:text-cyan-400 transition">ABBYY Vantage</li>
-        </ul>
-      </div>
-
-      {/* Company */}
-      <div>
-        <h3 className="text-white font-semibold mb-4">Company</h3>
-        <ul className="space-y-2 text-sm">
-          <li className="hover:text-cyan-400 transition cursor-pointer">
-            About Us
-          </li>
-          <li className="hover:text-cyan-400 transition cursor-pointer">
-            Careers
-          </li>
-          <li
-            onClick={() => setShowContactModal(true)}
-            className="hover:text-cyan-400 transition cursor-pointer"
-          >
-            Contact
-          </li>
-          <li
-            onClick={() => setShowPrivacyModal(true)}
-            className="hover:text-cyan-400 transition cursor-pointer"
-          >
-            Privacy Policy
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    {/* Divider line */}
-    <div className="mt-12 mb-6 h-px bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
-
-    {/* Bottom row */}
-    <div className="text-center text-sm text-slate-400">
-      © {new Date().getFullYear()} AIDT&amp;D. All rights reserved.
-    </div>
-  </div>
-</footer>
+      <Footer 
+        setShowPrivacyModal={setShowPrivacyModal}
+        setShowTermsModal={setShowTermsModal}
+        setShowContactModal={setShowContactModal}
+      />
 
 
       {/* Privacy Modal */}
