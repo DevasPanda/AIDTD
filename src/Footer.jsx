@@ -5,7 +5,11 @@ export default function Footer() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
   const [showContact, setShowContact] = useState(false);
-
+  React.useEffect(() => {
+    const openContact = () => setShowContact(true);
+    window.addEventListener("openContactForm", openContact);
+    return () => window.removeEventListener("openContactForm", openContact);
+  }, []);
   return (
     <>
       <footer className="bg-[#141819] text-slate-300 pt-16 pb-8 mt-20">

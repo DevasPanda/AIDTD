@@ -54,7 +54,7 @@ export default function Courses() {
                 Ideal for students or professionals transitioning into AI &
                 automation from non-CS or non-dev backgrounds.
               </p>
-              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-100 hover:bg-slate-700 transition">
+              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-100 hover:bg-slate-700 transition" onClick={() => window.dispatchEvent(new Event("openContactForm"))}>
                 Enquire about this track
               </button>
             </div>
@@ -82,7 +82,7 @@ export default function Courses() {
                 Best suited for learners who already understand basic coding
                 and want to work specifically on GenAI solutions.
               </p>
-              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-cyan-400 transition">
+              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-cyan-400 transition" onClick={() => window.dispatchEvent(new Event("openContactForm"))}>
                 Get syllabus &amp; roadmap
               </button>
             </div>
@@ -110,7 +110,7 @@ export default function Courses() {
                 Great for those targeting automation roles in operations, finance,
                 and shared services teams.
               </p>
-              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-fuchsia-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-fuchsia-400 transition">
+              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-fuchsia-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-fuchsia-400 transition" onClick={() => window.dispatchEvent(new Event("openContactForm"))}>
                 Join RPA &amp; IDP cohort
               </button>
             </div>
@@ -138,7 +138,7 @@ export default function Courses() {
                 Often taken along with or after internships to clearly showcase
                 your skills to future employers.
               </p>
-              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition">
+              <button className="mt-auto inline-flex items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition" onClick={() => window.dispatchEvent(new Event("openContactForm"))}>
                 Talk to mentor / counsellor
               </button>
             </div>
@@ -173,7 +173,7 @@ export default function Courses() {
                 Share a bit about your background and we&apos;ll suggest a
                 track that fits you best.
               </p>
-              <button className="w-full rounded-full bg-cyan-500 py-2.5 text-xs md:text-sm font-semibold text-slate-950 hover:bg-cyan-400 transition">
+              <button className="w-full rounded-full bg-cyan-500 py-2.5 text-xs md:text-sm font-semibold text-slate-950 hover:bg-cyan-400 transition" onClick={() => window.dispatchEvent(new Event("openContactForm"))}>
                 Request a free guidance call
               </button>
               <p className="mt-3 text-[11px] text-slate-500">
