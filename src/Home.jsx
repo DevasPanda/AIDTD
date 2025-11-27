@@ -235,11 +235,7 @@ export default function Home() {
       </FadeInSection>
 
       {/* Footer */}
-      <Footer 
-        setShowPrivacyModal={setShowPrivacyModal}
-        setShowTermsModal={setShowTermsModal}
-        setShowContactModal={setShowContactModal}
-      />
+      <Footer />
 
 
       {/* Privacy Modal */}
