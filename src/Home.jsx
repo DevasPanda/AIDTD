@@ -144,7 +144,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
           <FadeInSection>
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10">
+            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
               <h3 className="text-xl font-semibold mb-2 text-cyan-300">
                 AI Agent Solutions
               </h3>
@@ -161,7 +161,7 @@ export default function Home() {
           </FadeInSection>
 
           <FadeInSection className="delay-100">
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-fuchsia-500/10">
+            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
               <h3 className="text-xl font-semibold mb-2 text-fuchsia-300">
                 RPA & Intelligent Automation
               </h3>
@@ -178,7 +178,7 @@ export default function Home() {
           </FadeInSection>
 
           <FadeInSection className="delay-200">
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-emerald-500/10">
+            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
               <h3 className="text-xl font-semibold mb-2 text-emerald-300">
                 AI Upskilling & Co-build
               </h3>

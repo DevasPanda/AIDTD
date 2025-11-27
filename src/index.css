@@ -111,3 +111,135 @@ body::before {
     transform: translateY(0);
   }
 }
+/* === GLOBAL FUTURISTIC BACKGROUND AURA === */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -40%;
+  pointer-events: none;
+  z-index: -2;
+
+  /* two overlapping radial gradients */
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.25), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.2), transparent 55%);
+
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  animation: aidtd-orbit 38s linear infinite;
+}
+
+@keyframes aidtd-orbit {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 10px, 0) rotate(180deg) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(360deg) scale(1);
+  }
+}
+
+/* Subtle floating card animation (very light) */
+.aidtd-float {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.aidtd-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9),
+    0 0 35px rgba(56, 189, 248, 0.35);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+/* === NAVBAR PILL ACTIVE EFFECT + STAR SPARKLE === */
+
+.nav-pill {
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.35s ease,
+    transform 0.25s ease, border-color 0.35s ease;
+}
+
+.nav-pill--inactive {
+  color: #e5e7eb; /* slate-200 */
+}
+
+.nav-pill--inactive:hover {
+  background: rgba(15, 23, 42, 0.9); /* slate-900 */
+  color: #67e8f9; /* cyan-300 */
+}
+
+.nav-pill--active {
+  background: linear-gradient(135deg, #22d3ee, #e879f9);
+  color: #020617; /* slate-950 */
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.45);
+}
+
+/* subtle animated border glow */
+.nav-pill--active::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(248, 250, 252, 0.7); /* slate-50 */
+  opacity: 0.7;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: nav-pill-glow 2.4s ease-in-out infinite;
+}
+
+/* tiny star that glides along the pill border */
+.nav-pill--active {
+  position: relative;
+  overflow: visible;
+}
+
+/* Orbit sparkle */
+.nav-pill--active::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  animation: nav-pill-orbit 3.6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes nav-pill-glow {
+  0% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+
+/* star slides along the border from left to right and back */
+@keyframes nav-pill-orbit {
+  0% {
+    transform: rotate(0deg) translateX(38px) rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) translateX(38px) rotate(-90deg);
+  }
+  50% {
+    transform: rotate(180deg) translateX(38px) rotate(-180deg);
+  }
+  75% {
+    transform: rotate(270deg) translateX(38px) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(38px) rotate(-360deg);
+  }
+}
