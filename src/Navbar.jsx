@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <div className="relative">
-      <header className="flex justify-between items-center px-6 py-4 bg-slate-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur border-b border-white/10">
+      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-3">
           <img
             src="/DigynixLogo.png"
@@ -15,6 +15,7 @@ export default function Navbar() {
             AI • AUTOMATION • TRAINING
           </span>
         </div>
+
         <nav className="space-x-3 md:space-x-6 text-sm md:text-base font-medium">
           <a
             href="/"
@@ -26,7 +27,7 @@ export default function Navbar() {
             href="/#services"
             className="px-3 py-2 rounded-full hover:bg-slate-800 hover:text-cyan-300 transition-all"
           >
-            AI &amp; Automation
+            AI & Automation
           </a>
           <a
             href="/courses"
@@ -41,7 +42,7 @@ export default function Navbar() {
             Internships
           </a>
         </nav>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
