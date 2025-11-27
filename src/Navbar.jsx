@@ -70,6 +70,16 @@ export default function Navbar() {
           >
             Internships
           </a>
+
+          {/* About */}
+          <a
+            href="/about"
+            className={`${baseLink} ${
+              path === "/about" ? active : inactive
+            }`}
+          >
+            About us
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -139,11 +149,12 @@ export default function Navbar() {
             </a>
             <a
               href="/about"
-              className={`nav-pill ${
-              path === "/about" ? "nav-pill--active" : "nav-pill--inactive"
+              onClick={handleNavClick}
+              className={`${baseLink} w-max ${
+                path === "/about" ? active : inactive
               }`}
             >
-              About
+              About us
             </a>
           </nav>
         </div>
