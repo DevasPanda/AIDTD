@@ -8,7 +8,7 @@ export default function Courses() {
   const [showTermsModal, setShowTermsModal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-slate-950 text-slate-50">
       {/* Navbar */}
       <header className="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
         <div className="flex items-center space-x-2">
