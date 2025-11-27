@@ -117,7 +117,6 @@ export default function Footer() {
             {/* Netlify-wired contact form */}
             <form
                 name="contact"
-                action="/pages/success"
                 method="POST"
                 data-netlify="true"
             >
