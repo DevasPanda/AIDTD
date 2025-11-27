@@ -119,6 +119,8 @@ export default function Footer() {
                 name="contact"
                 method="POST"
                 data-netlify="true"
+                action="/thanks.html"
+                className="space-y-3"
             >
               {/* Netlify required hidden field */}
               <input type="hidden" name="form-name" value="contact" />
