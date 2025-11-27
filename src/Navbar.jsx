@@ -21,11 +21,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
         {/* Logo + brand */}
         <div className="flex items-center space-x-3">
-          <img
-            src="/DigynixLogo.png"
-            alt="AIDT&D Logo"
-            className="h-9 w-auto md:h-10"
-          />
+          <div className="aidtd-logo-wrapper">
+            <img
+              src="/DigynixLogo.png"
+              alt="AIDT&D Logo"
+              className="h-9 w-auto md:h-10"
+            />
+            <span className="aidtd-logo-star">✦</span>
+          </div>
           <span className="hidden sm:inline text-[10px] md:text-xs uppercase tracking-[0.25em] text-cyan-400">
             AI • AUTOMATION • TRAINING
           </span>
