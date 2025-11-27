@@ -10,7 +10,7 @@ export default function Internships() {
       <Navbar />
 
       {/* Hero / Intro */}
-      <section className="pt-20 md:pt-24 pb-10 px-4 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
+      <section className="pt-28 md:pt-32 pb-10 px-4 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
         <FadeInSection>
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-400 mb-2">
@@ -148,77 +148,99 @@ export default function Internships() {
               </p>
             </div>
 
-            {/* Right: Form */}
+            {/* Right: Netlify-wired Form */}
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(
-                  "Thanks for applying! We have received your details and will get back to you soon."
-                );
-              }}
+              name="internship-application"
+              method="POST"
+              data-netlify="true"
+              action="/thanks.html"
               className="space-y-3"
             >
+              <input
+                type="hidden"
+                name="form-name"
+                value="internship-application"
+              />
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
+                  name="fullName"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 />
               </div>
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Email
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 />
               </div>
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Current Status
                 </label>
                 <select
+                  name="status"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 >
                   <option value="">Select...</option>
-                  <option>Student</option>
-                  <option>Recent Graduate</option>
-                  <option>Working Professional</option>
-                  <option>Career Transition</option>
+                  <option value="Student">Student</option>
+                  <option value="Recent Graduate">Recent Graduate</option>
+                  <option value="Working Professional">
+                    Working Professional
+                  </option>
+                  <option value="Career Transition">Career Transition</option>
                 </select>
               </div>
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Preferred Internship Path
                 </label>
                 <select
+                  name="path"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 >
                   <option value="">Select...</option>
-                  <option>AI Agent Intern</option>
-                  <option>RPA Automation Intern</option>
-                  <option>Full Stack AI Intern</option>
-                  <option>Not sure, need guidance</option>
+                  <option value="AI Agent Intern">AI Agent Intern</option>
+                  <option value="RPA Automation Intern">
+                    RPA Automation Intern
+                  </option>
+                  <option value="Full Stack AI Intern">
+                    Full Stack AI Intern
+                  </option>
+                  <option value="Need guidance">
+                    Not sure, need guidance
+                  </option>
                 </select>
               </div>
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Tell us about your background
                 </label>
                 <textarea
                   rows={3}
+                  name="about"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                   placeholder="Mention your skills, projects, and what you want to learn..."
                 />
               </div>
+
               <button
                 type="submit"
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 py-2.5 text-sm font-semibold text-slate-950 hover:from-cyan-400 hover:to-fuchsia-400 transition shadow-lg"
@@ -229,8 +251,8 @@ export default function Internships() {
           </div>
         </FadeInSection>
       </section>
+
       <Footer />
     </div>
-    
   );
 }
