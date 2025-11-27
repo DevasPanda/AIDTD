@@ -113,22 +113,24 @@ export default function Footer() {
                 ✕
               </button>
             </div>
+
+            {/* Netlify-wired contact form */}
             <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
               className="space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(
-                  "Thanks for reaching out! We will get back to you soon."
-                );
-                setShowContact(false);
-              }}
             >
+              {/* Netlify required hidden field */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
                 <label className="block text-xs text-slate-300 mb-1">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 />
@@ -139,6 +141,7 @@ export default function Footer() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 />
@@ -149,6 +152,7 @@ export default function Footer() {
                 </label>
                 <textarea
                   rows={3}
+                  name="message"
                   required
                   className="w-full rounded-lg bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
                 />
