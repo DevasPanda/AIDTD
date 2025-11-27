@@ -1,40 +1,52 @@
 // src/Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const path =
     typeof window !== "undefined" ? window.location.pathname : "/";
 
+  const baseLink = "nav-pill";
+  const active = "nav-pill--active";
+  const inactive = "nav-pill--inactive";
+
+  const handleNavClick = () => {
+    // close mobile menu after navigation
+    setOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur border-b border-white/10">
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+        {/* Logo + brand */}
         <div className="flex items-center space-x-3">
           <img
             src="/DigynixLogo.png"
             alt="AIDT&D Logo"
-            className="h-10 w-auto"
+            className="h-9 w-auto md:h-10"
           />
-          <span className="text-xs md:text-sm uppercase tracking-[0.25em] text-cyan-400">
+          <span className="hidden sm:inline text-[10px] md:text-xs uppercase tracking-[0.25em] text-cyan-400">
             AI • AUTOMATION • TRAINING
           </span>
         </div>
 
-        <nav className="space-x-3 md:space-x-6 text-sm md:text-base font-medium">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex space-x-3 md:space-x-4 text-sm md:text-base font-medium">
           {/* Home */}
           <a
             href="/"
-            className={
-              "nav-pill " +
-              (path === "/" ? "nav-pill--active" : "nav-pill--inactive")
-            }
+            className={`${baseLink} ${
+              path === "/" ? active : inactive
+            }`}
           >
             Home
           </a>
 
-          {/* AI & Automation – anchor on Home (no active detection for now) */}
+          {/* AI & Automation – section on Home */}
           <a
             href="/#services"
-            className={"nav-pill nav-pill--inactive"}
+            className={`${baseLink} ${inactive}`}
           >
             AI &amp; Automation
           </a>
@@ -42,12 +54,9 @@ export default function Navbar() {
           {/* Courses */}
           <a
             href="/courses"
-            className={
-              "nav-pill " +
-              (path === "/courses"
-                ? "nav-pill--active"
-                : "nav-pill--inactive")
-            }
+            className={`${baseLink} ${
+              path === "/courses" ? active : inactive
+            }`}
           >
             Courses
           </a>
@@ -55,17 +64,82 @@ export default function Navbar() {
           {/* Internships */}
           <a
             href="/internships"
-            className={
-              "nav-pill " +
-              (path === "/internships"
-                ? "nav-pill--active"
-                : "nav-pill--inactive")
-            }
+            className={`${baseLink} ${
+              path === "/internships" ? active : inactive
+            }`}
           >
             Internships
           </a>
         </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700 px-2.5 py-2 text-slate-200"
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle navigation menu"
+        >
+          <span className="sr-only">Toggle menu</span>
+          <div className="space-y-1.5">
+            <span
+              className={`block h-0.5 w-5 rounded-full bg-slate-200 transition-transform ${
+                open ? "translate-y-[5px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-4 rounded-full bg-slate-400 transition-opacity ${
+                open ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 rounded-full bg-slate-200 transition-transform ${
+                open ? "-translate-y-[5px] -rotate-45" : ""
+              }`}
+            />
+          </div>
+        </button>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {open && (
+        <div className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur">
+          <nav className="flex flex-col px-4 py-3 space-y-2 text-sm font-medium">
+            <a
+              href="/"
+              onClick={handleNavClick}
+              className={`${baseLink} w-max ${
+                path === "/" ? active : inactive
+              }`}
+            >
+              Home
+            </a>
+            <a
+              href="/#services"
+              onClick={handleNavClick}
+              className={`${baseLink} w-max ${inactive}`}
+            >
+              AI &amp; Automation
+            </a>
+            <a
+              href="/courses"
+              onClick={handleNavClick}
+              className={`${baseLink} w-max ${
+                path === "/courses" ? active : inactive
+              }`}
+            >
+              Courses
+            </a>
+            <a
+              href="/internships"
+              onClick={handleNavClick}
+              className={`${baseLink} w-max ${
+                path === "/internships" ? active : inactive
+              }`}
+            >
+              Internships
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
