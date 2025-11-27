@@ -65,8 +65,13 @@ export default function Footer() {
               <h3 className="text-white font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-sm">
                 <li className="hover:text-cyan-400 transition cursor-pointer">
-                  About Us
-                </li>
+                   <a
+                    href="/about"
+                      className="hover:text-cyan-400 transition cursor-pointer"
+                    >
+                      About Us
+                    </a>
+                 </li>
                 <li className="hover:text-cyan-400 transition cursor-pointer">
                   Careers
                 </li>

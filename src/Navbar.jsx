@@ -137,6 +137,14 @@ export default function Navbar() {
             >
               Internships
             </a>
+            <a
+              href="/about"
+              className={`nav-pill ${
+              path === "/about" ? "nav-pill--active" : "nav-pill--inactive"
+              }`}
+            >
+              About
+            </a>
           </nav>
         </div>
       )}
