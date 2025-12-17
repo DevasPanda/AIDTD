@@ -10,13 +10,13 @@ export default function Home() {
   const [showTermsModal, setShowTermsModal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
-      <Navbar />
+     <div className="min-h-screen bg-slate-950 text-slate-50">
+    <Navbar />      
 
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative overflow-hidden py-16 md:py-28 px-4"
+        className="relative overflow-hidden py-20 md:py-28 px-4"
       >
         {/* Glow blobs */}
         <div className="pointer-events-none absolute -top-32 -left-10 h-72 w-72 rounded-full bg-cyan-500 blur-[120px] opacity-50" />
@@ -29,7 +29,7 @@ export default function Home() {
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>AIDT&D | AI & Automation Studio</span>
               </div>
-              <h1 className="text-3xl md:text-6xl font-semibold leading-tight mb-4">
+              <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-4">
                 Build{" "}
                 <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-fuchsia-400 bg-clip-text text-transparent">
                   AI Agents
@@ -38,22 +38,36 @@ export default function Home() {
                 <br />
                 that ship to production.
               </h1>
-              <p className="text-slate-300 text-sm md:text-lg mb-8 max-w-xl">
+              <p className="text-slate-300 text-base md:text-lg mb-8 max-w-xl">
                 We design AI & Automation solutions for businesses and train
                 the next generation of builders through hands-on projects,
                 internships, and bootcamps.
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#services">
-                  <button className="rounded-full bg-cyan-500 px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-slate-950 hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
+                  <button className="rounded-full bg-cyan-500 px-6 py-2.5 text-sm md:text-base font-semibold text-slate-950 hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
                     Explore AI & Automation Services
                   </button>
                 </a>
                 <a href="/courses#course-section">
-                  <button className="rounded-full border border-slate-600 px-4 md:px-6 py-2 text-sm md:text-base font-semibold hover:border-cyan-400 hover:text-cyan-300 transition">
+                  <button className="rounded-full border border-slate-600 px-6 py-2.5 text-sm md:text-base font-semibold hover:border-cyan-400 hover:text-cyan-300 transition">
                     View Training Tracks
                   </button>
                 </a>
+              </div>
+              <div className="flex flex-wrap gap-6 text-xs md:text-sm text-slate-400">
+                <div>
+                  <div className="font-semibold text-slate-100">
+                    AI Agents • RPA • IDP
+                  </div>
+                  <div>OpenAI · LangChain · Automation Anywhere · ABBYY</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-slate-100">
+                    Education + Services
+                  </div>
+                  <div>Consulting, builds, internships & mentorship</div>
+                </div>
               </div>
             </div>
           </FadeInSection>
@@ -85,11 +99,13 @@ export default function Home() {
                   value="Prototype"
                   accent="fuchsia"
                 />
-                <a
-                  href="/train-demo"
-                  className="block text-cyan-300 hover:text-cyan-400 transition text-xs md:text-sm"
-                >
-                  Demo Combat Training →
+                {/* Make Demo Combat Training clickable */}
+                <a href="/train-demo" className="block">
+                  <DashboardRow
+                    label="AI Demo Combat Training"
+                    value="In Progress"
+                    accent="cyan"
+                  />
                 </a>
               </div>
               <div className="mt-6 rounded-2xl border border-slate-700/70 bg-slate-900/80 p-3">
@@ -119,8 +135,8 @@ export default function Home() {
         id="services"
         className="relative py-16 md:py-20 px-4 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950"
       >
-        {/* thin divider line above the section */}
-        <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
+  {/* thin divider line above the section */}
+  <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
         <FadeInSection>
           <div className="max-w-6xl mx-auto text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3">
@@ -228,6 +244,7 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
 
       {/* Privacy Modal */}
       {showPrivacyModal && (
