@@ -1,5 +1,6 @@
 // src/Navbar.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -37,52 +38,52 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-3 md:space-x-4 text-sm md:text-base font-medium">
           {/* Home */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`${baseLink} ${
               path === "/" ? active : inactive
             }`}
           >
             Home
-          </a>
+          </Link>
 
           {/* AI & Automation – section on Home */}
-          <a
-            href="/#services"
+          <Link
+            to="/#services"
             className={`${baseLink} ${inactive}`}
           >
             AI &amp; Automation
-          </a>
+          </Link>
 
           {/* Courses */}
-          <a
-            href="/courses"
+          <Link
+            to="/courses"
             className={`${baseLink} ${
               path === "/courses" ? active : inactive
             }`}
           >
             Courses
-          </a>
+          </Link>
 
           {/* Internships */}
-          <a
-            href="/internships"
+          <Link
+            to="/internships"
             className={`${baseLink} ${
               path === "/internships" ? active : inactive
             }`}
           >
             Internships
-          </a>
+          </Link>
 
           {/* About */}
-          <a
-            href="/about"
+          <Link
+            to="/about"
             className={`${baseLink} ${
               path === "/about" ? active : inactive
             }`}
           >
             About us
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -116,49 +117,49 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur">
           <nav className="flex flex-col px-4 py-3 space-y-2 text-sm font-medium">
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={handleNavClick}
               className={`${baseLink} w-max ${
                 path === "/" ? active : inactive
               }`}
             >
               Home
-            </a>
-            <a
-              href="/#services"
+            </Link>
+            <Link
+              to="/#services"
               onClick={handleNavClick}
               className={`${baseLink} w-max ${inactive}`}
             >
               AI &amp; Automation
-            </a>
-            <a
-              href="/courses"
+            </Link>
+            <Link
+              to="/courses"
               onClick={handleNavClick}
               className={`${baseLink} w-max ${
                 path === "/courses" ? active : inactive
               }`}
             >
               Courses
-            </a>
-            <a
-              href="/internships"
+            </Link>
+            <Link
+              to="/internships"
               onClick={handleNavClick}
               className={`${baseLink} w-max ${
                 path === "/internships" ? active : inactive
               }`}
             >
               Internships
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               onClick={handleNavClick}
               className={`${baseLink} w-max ${
                 path === "/about" ? active : inactive
               }`}
             >
               About us
-            </a>
+            </Link>
           </nav>
         </div>
       )}
