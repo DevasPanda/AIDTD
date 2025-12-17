@@ -237,7 +237,14 @@ export default function TrainDemo() {
 
   // ---------------- UI ----------------
   return (
-    <div style={{ background: "black", height: "100vh", position: "relative" }}>
+    <div
+      style={{
+        background: "black",
+        height: "100vh",
+        position: "relative",
+        overflow: "hidden", // Prevent overflow issues
+      }}
+    >
       <video
         ref={videoRef}
         autoPlay
@@ -257,10 +264,10 @@ export default function TrainDemo() {
             position: "absolute",
             inset: 0,
             margin: "auto",
-            height: 60,
-            width: 220,
-            fontSize: 18,
-            borderRadius: 12,
+            height: "50px", // Adjusted for smaller screens
+            width: "180px", // Adjusted for smaller screens
+            fontSize: "14px", // Adjusted for smaller screens
+            borderRadius: "8px",
             background: "#00ff99",
             border: "none",
             fontWeight: "bold",
@@ -273,17 +280,26 @@ export default function TrainDemo() {
       {started && (
         <>
           {/* HUD */}
-          <div style={{ position: "absolute", top: 16, left: 16, color: "#aaa" }}>
+          <div
+            style={{
+              position: "absolute",
+              top: "8px", // Adjusted for smaller screens
+              left: "8px", // Adjusted for smaller screens
+              color: "#aaa",
+              fontSize: "12px", // Adjusted for smaller screens
+            }}
+          >
             {direction}
           </div>
 
           <div
             style={{
               position: "absolute",
-              top: 16,
-              right: 16,
+              top: "8px", // Adjusted for smaller screens
+              right: "8px", // Adjusted for smaller screens
               color: "white",
               textAlign: "right",
+              fontSize: "12px", // Adjusted for smaller screens
             }}
           >
             <div>Lv {level}</div>
@@ -294,10 +310,10 @@ export default function TrainDemo() {
             <div
               style={{
                 position: "absolute",
-                top: 60,
-                right: 16,
+                top: "40px", // Adjusted for smaller screens
+                right: "8px", // Adjusted for smaller screens
                 color: "#00ff99",
-                fontSize: 22,
+                fontSize: "16px", // Adjusted for smaller screens
                 fontWeight: "bold",
               }}
             >
@@ -310,12 +326,12 @@ export default function TrainDemo() {
               onClick={startCalibration}
               style={{
                 position: "absolute",
-                bottom: 30,
+                bottom: "20px", // Adjusted for smaller screens
                 left: "50%",
                 transform: "translateX(-50%)",
-                padding: "12px 20px",
-                fontSize: 16,
-                borderRadius: 10,
+                padding: "10px 16px", // Adjusted for smaller screens
+                fontSize: "14px", // Adjusted for smaller screens
+                borderRadius: "8px",
                 background: "#00aaff",
                 border: "none",
                 fontWeight: "bold",
@@ -333,10 +349,11 @@ export default function TrainDemo() {
                 width: "100%",
                 textAlign: "center",
                 color: "cyan",
-                fontSize: 22,
+                fontSize: "16px", // Adjusted for smaller screens
               }}
             >
-              Hold your head straight<br />
+              Hold your head straight
+              <br />
               Calibrating… {calibProgress}%
             </div>
           )}
@@ -346,12 +363,12 @@ export default function TrainDemo() {
               onClick={startTrial}
               style={{
                 position: "absolute",
-                bottom: 30,
+                bottom: "20px", // Adjusted for smaller screens
                 left: "50%",
                 transform: "translateX(-50%)",
-                padding: "12px 20px",
-                fontSize: 16,
-                borderRadius: 10,
+                padding: "10px 16px", // Adjusted for smaller screens
+                fontSize: "14px", // Adjusted for smaller screens
+                borderRadius: "8px",
                 background: "#ffaa00",
                 border: "none",
                 fontWeight: "bold",
@@ -369,7 +386,7 @@ export default function TrainDemo() {
                 width: "100%",
                 textAlign: "center",
                 color: "yellow",
-                fontSize: 48,
+                fontSize: "32px", // Adjusted for smaller screens
                 fontWeight: "bold",
               }}
             >
@@ -381,11 +398,11 @@ export default function TrainDemo() {
             <div
               style={{
                 position: "absolute",
-                bottom: 80,
+                bottom: "60px", // Adjusted for smaller screens
                 width: "100%",
                 textAlign: "center",
                 color: "#00ff99",
-                fontSize: 18,
+                fontSize: "14px", // Adjusted for smaller screens
               }}
             >
               {reactionTime} ms
