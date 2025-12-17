@@ -99,6 +99,14 @@ export default function Home() {
                   value="Prototype"
                   accent="fuchsia"
                 />
+                {/* Make Demo Combat Training clickable */}
+                <a href="/train-demo" className="block">
+                  <DashboardRow
+                    label="AI Demo Combat Training"
+                    value="In Progress"
+                    accent="cyan"
+                  />
+                </a>
               </div>
               <div className="mt-6 rounded-2xl border border-slate-700/70 bg-slate-900/80 p-3">
                 <p className="text-xs text-slate-300 mb-1">
