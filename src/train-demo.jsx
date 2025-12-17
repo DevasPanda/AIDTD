@@ -227,6 +227,12 @@ export default function TrainDemo() {
     });
 
     camera.start();
+
+    // Cleanup function to release WebGL resources
+    return () => {
+      camera.stop(); // Stop the camera
+      faceMesh.close(); // Release FaceMesh resources
+    };
   }, [started, isCalibrating, prompt]);
 
   // ---------------- UI ----------------
