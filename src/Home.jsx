@@ -10,8 +10,8 @@ export default function Home() {
   const [showTermsModal, setShowTermsModal] = useState(false);
 
   return (
-     <div className="min-h-screen bg-slate-950 text-slate-50">
-    <Navbar />      
+    <div className="min-h-screen bg-slate-950 text-slate-50">
+      <Navbar />
 
       {/* Hero Section */}
       <section
@@ -54,20 +54,6 @@ export default function Home() {
                     View Training Tracks
                   </button>
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-xs md:text-sm text-slate-400">
-                <div>
-                  <div className="font-semibold text-slate-100">
-                    AI Agents • RPA • IDP
-                  </div>
-                  <div>OpenAI · LangChain · Automation Anywhere · ABBYY</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-100">
-                    Education + Services
-                  </div>
-                  <div>Consulting, builds, internships & mentorship</div>
-                </div>
               </div>
             </div>
           </FadeInSection>
@@ -133,8 +119,8 @@ export default function Home() {
         id="services"
         className="relative py-16 md:py-20 px-4 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950"
       >
-  {/* thin divider line above the section */}
-  <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
+        {/* thin divider line above the section */}
+        <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
         <FadeInSection>
           <div className="max-w-6xl mx-auto text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3">
@@ -242,7 +228,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-
 
       {/* Privacy Modal */}
       {showPrivacyModal && (
