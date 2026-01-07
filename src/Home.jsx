@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import FadeInSection from "./FadeInSection";
 import TechStackStrip from "./TechStackStrip";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function Home() {
+  const location = useLocation();
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
      <div className="min-h-screen bg-slate-950 text-slate-50">

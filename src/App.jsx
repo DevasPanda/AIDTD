@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Home';
 import Courses from './Courses';
 import Internships from './Internships';
@@ -6,6 +7,16 @@ import About from './About';
 import TrainDemo from './train-demo';
 
 function App() {
+  const location = useLocation();
+  const prevPathname = useRef(location.pathname);
+
+  useEffect(() => {
+    if (prevPathname.current !== location.pathname) {
+      window.scrollTo(0, 0);
+      prevPathname.current = location.pathname;
+    }
+  }, [location]);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
