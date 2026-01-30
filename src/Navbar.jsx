@@ -1,9 +1,10 @@
 // src/Navbar.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const path =
     typeof window !== "undefined" ? window.location.pathname : "/";
@@ -14,6 +15,38 @@ export default function Navbar() {
 
   const handleNavClick = () => {
     // close mobile menu after navigation
+    setOpen(false);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    if (path === "/") {
+      // Already on home page, just scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to home page
+      navigate("/");
+    }
+    setOpen(false);
+  };
+
+  const handleServicesClick = (e) => {
+    e.preventDefault();
+    if (path === "/") {
+      // Already on home page, scroll to services section
+      scrollToSection("services");
+    } else {
+      // Navigate to home page with hash, then scroll after navigation
+      navigate("/");
+      setTimeout(() => scrollToSection("services"), 100);
+    }
     setOpen(false);
   };
 
@@ -38,22 +71,24 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-3 md:space-x-4 text-sm md:text-base font-medium">
           {/* Home */}
-          <Link
-            to="/"
+          <a
+            href="/"
+            onClick={handleHomeClick}
             className={`${baseLink} ${
               path === "/" ? active : inactive
             }`}
           >
             Home
-          </Link>
+          </a>
 
           {/* AI & Automation – section on Home */}
-          <Link
-            to="/#services"
+          <a
+            href="/#services"
+            onClick={handleServicesClick}
             className={`${baseLink} ${inactive}`}
           >
             AI &amp; Automation
-          </Link>
+          </a>
 
           {/* Courses */}
           <Link
@@ -117,22 +152,22 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur">
           <nav className="flex flex-col px-4 py-3 space-y-2 text-sm font-medium">
-            <Link
-              to="/"
-              onClick={handleNavClick}
+            <a
+              href="/"
+              onClick={handleHomeClick}
               className={`${baseLink} w-max ${
                 path === "/" ? active : inactive
               }`}
             >
               Home
-            </Link>
-            <Link
-              to="/#services"
-              onClick={handleNavClick}
+            </a>
+            <a
+              href="/#services"
+              onClick={handleServicesClick}
               className={`${baseLink} w-max ${inactive}`}
             >
               AI &amp; Automation
-            </Link>
+            </a>
             <Link
               to="/courses"
               onClick={handleNavClick}
