@@ -3,6 +3,7 @@ import React from "react";
 import FadeInSection from "./FadeInSection";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import internshipsContent from "../content/internships.json";
 
 export default function Internships() {
   return (
@@ -14,15 +15,13 @@ export default function Internships() {
         <FadeInSection>
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-400 mb-2">
-              AIDT&amp;D Internships
+              {internshipsContent.subtitle}
             </p>
             <h1 className="text-3xl md:text-5xl font-semibold mb-3">
-              Real-World AI &amp; Automation Internships
+              {internshipsContent.title}
             </h1>
             <p className="text-sm md:text-base text-slate-300 max-w-3xl mx-auto">
-              Our internships are not classroom simulations. You work on real
-              projects, guided by mentors, and build a portfolio that actually
-              proves your capability in AI, RPA, and intelligent automation.
+              {internshipsContent.description}
             </p>
           </div>
         </FadeInSection>
@@ -31,63 +30,33 @@ export default function Internships() {
       {/* Internship Tracks */}
       <section className="py-16 md:py-20 px-4 bg-slate-900">
         <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
-          <FadeInSection>
-            <div className="h-full rounded-3xl border border-cyan-400/40 bg-slate-950/80 p-6 backdrop-blur shadow-[0_0_40px_rgba(56,189,248,0.25)]">
-              <p className="text-xs uppercase tracking-[0.22em] text-cyan-300 mb-2">
-                Internship Path
-              </p>
-              <h3 className="text-xl font-semibold mb-2">AI Agent Intern</h3>
-              <p className="text-sm text-slate-300 mb-4">
-                Work on chatbot systems, internal copilots, and AI assistants
-                using modern GenAI stack and RAG patterns.
-              </p>
-              <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                <li>Design AI task flows and prompts</li>
-                <li>Build knowledge bots on real documents</li>
-                <li>Deploy basic AI agents to test users</li>
-              </ul>
-            </div>
-          </FadeInSection>
+          {internshipsContent.programs.map((program, i) => {
+            const colorClass = program.color || "cyan";
+            const shadowColors = {
+              cyan: "56,189,248,0.25",
+              fuchsia: "236,72,153,0.22",
+              emerald: "34,197,94,0.2"
+            };
 
-          <FadeInSection className="delay-100">
-            <div className="h-full rounded-3xl border border-fuchsia-400/40 bg-slate-950/80 p-6 backdrop-blur shadow-[0_0_40px_rgba(236,72,153,0.22)]">
-              <p className="text-xs uppercase tracking-[0.22em] text-fuchsia-300 mb-2">
-                Internship Path
-              </p>
-              <h3 className="text-xl font-semibold mb-2">
-                RPA Automation Intern
-              </h3>
-              <p className="text-sm text-slate-300 mb-4">
-                Create automation workflows for document-heavy business
-                processes using RPA tools.
-              </p>
-              <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                <li>Build and test automation bots</li>
-                <li>Integrate email, spreadsheets, and APIs</li>
-                <li>Work on invoice / KYC / back-office flows</li>
-              </ul>
-            </div>
-          </FadeInSection>
-
-          <FadeInSection className="delay-200">
-            <div className="h-full rounded-3xl border border-emerald-400/40 bg-slate-950/80 p-6 backdrop-blur shadow-[0_0_40px_rgba(34,197,94,0.2)]">
-              <p className="text-xs uppercase tracking-[0.22em] text-emerald-300 mb-2">
-                Internship Path
-              </p>
-              <h3 className="text-xl font-semibold mb-2">
-                Full Stack AI Intern
-              </h3>
-              <p className="text-sm text-slate-300 mb-4">
-                Combine frontend, backend, and AI integration to build
-                production-style systems.
-              </p>
-              <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                <li>Build AI-powered dashboards and tools</li>
-                <li>Work with REST APIs &amp; basic databases</li>
-                <li>Get exposure to deployment workflows</li>
-              </ul>
-            </div>
-          </FadeInSection>
+            return (
+              <FadeInSection key={i} className={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <div className={`h-full rounded-3xl border border-${colorClass}-400/40 bg-slate-950/80 p-6 backdrop-blur shadow-[0_0_40px_rgba(${shadowColors[colorClass]})]`}>
+                  <p className={`text-xs uppercase tracking-[0.22em] text-${colorClass}-300 mb-2`}>
+                    {program.label}
+                  </p>
+                  <h3 className="text-xl font-semibold mb-2">{program.name}</h3>
+                  <p className="text-sm text-slate-300 mb-4">
+                    {program.description}
+                  </p>
+                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                    {program.responsibilities.map((resp, j) => (
+                      <li key={j}>{resp}</li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeInSection>
+            );
+          })}
         </div>
       </section>
 
@@ -96,15 +65,10 @@ export default function Internships() {
         <FadeInSection>
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center">
-              How the Internship Works
+              {internshipsContent.process.heading}
             </h2>
             <div className="grid gap-6 md:grid-cols-4">
-              {[
-                "Apply Online",
-                "Screening Call",
-                "Training + Project",
-                "Certification & Placement Support",
-              ].map((step, i) => (
+              {internshipsContent.process.steps.map((step, i) => (
                 <div
                   key={i}
                   className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-center"
@@ -130,21 +94,18 @@ export default function Internships() {
             {/* Left: Text */}
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-                Apply for an Internship at AIDT&amp;D
+                {internshipsContent.application.heading}
               </h2>
               <p className="text-sm md:text-base text-slate-300 mb-4">
-                Share a few details about yourself and the kind of work you want
-                to do. We&apos;ll review your application and get back to you
-                with next steps.
+                {internshipsContent.application.description}
               </p>
               <ul className="text-xs md:text-sm text-slate-300 space-y-2 list-disc list-inside mb-4">
-                <li>Remote &amp; hybrid options depending on project</li>
-                <li>Focus on real deliverables, not just certificates</li>
-                <li>Support with portfolio, resume &amp; interviews</li>
+                {internshipsContent.application.benefits.map((benefit, i) => (
+                  <li key={i}>{benefit}</li>
+                ))}
               </ul>
               <p className="text-[11px] text-slate-500">
-                Note: Seats are limited per cohort. Shortlisted candidates will
-                be contacted via email or phone.
+                {internshipsContent.application.note}
               </p>
             </div>
 

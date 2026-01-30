@@ -3,6 +3,7 @@ import FadeInSection from "./FadeInSection";
 import TechStackStrip from "./TechStackStrip";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import homeContent from "../content/home.json";
 
 export default function Home() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
@@ -27,47 +28,39 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-slate-900/60 px-3 py-1 text-xs md:text-sm text-cyan-200 mb-4">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>AIDT&D | AI & Automation Studio</span>
+                <span>{homeContent.hero.badgeText}</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-4">
-                Build{" "}
+                {homeContent.hero.titleLine1}{" "}
                 <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-fuchsia-400 bg-clip-text text-transparent">
-                  AI Agents
+                  {homeContent.hero.titleHighlight}
                 </span>{" "}
-                & Automations
-                <br />
-                that ship to production.
+                {homeContent.hero.titleLine2}
               </h1>
               <p className="text-slate-300 text-base md:text-lg mb-8 max-w-xl">
-                We design AI & Automation solutions for businesses and train
-                the next generation of builders through hands-on projects,
-                internships, and bootcamps.
+                {homeContent.hero.description}
               </p>
               <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#services">
                   <button className="rounded-full bg-cyan-500 px-6 py-2.5 text-sm md:text-base font-semibold text-slate-950 hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
-                    Explore AI & Automation Services
+                    {homeContent.hero.primaryButtonText}
                   </button>
                 </a>
                 <a href="/courses#course-section">
                   <button className="rounded-full border border-slate-600 px-6 py-2.5 text-sm md:text-base font-semibold hover:border-cyan-400 hover:text-cyan-300 transition">
-                    View Training Tracks
+                    {homeContent.hero.secondaryButtonText}
                   </button>
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-xs md:text-sm text-slate-400">
-                <div>
-                  <div className="font-semibold text-slate-100">
-                    AI Agents • RPA • IDP
+                {homeContent.hero.stats.map((stat, i) => (
+                  <div key={i}>
+                    <div className="font-semibold text-slate-100">
+                      {stat.title}
+                    </div>
+                    <div>{stat.description}</div>
                   </div>
-                  <div>OpenAI · LangChain · Automation Anywhere · ABBYY</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-100">
-                    Education + Services
-                  </div>
-                  <div>Consulting, builds, internships & mentorship</div>
-                </div>
+                ))}
               </div>
             </div>
           </FadeInSection>
@@ -84,41 +77,35 @@ export default function Home() {
                 </span>
               </div>
               <div className="space-y-3 text-xs md:text-sm">
-                <DashboardRow
-                  label="Resume Screening Agent"
-                  value="Deployed"
-                  accent="emerald"
-                />
-                <DashboardRow
-                  label="Invoice Extraction (IDP + RPA)"
-                  value="In Progress"
-                  accent="cyan"
-                />
-                <DashboardRow
-                  label="GenAI Knowledge Bot"
-                  value="Prototype"
-                  accent="fuchsia"
-                />
-                {/* Make Demo Combat Training clickable */}
-                <a href="/train-demo" className="block">
-                  <DashboardRow
-                    label="AI Demo Combat Training"
-                    value="In Progress"
-                    accent="cyan"
-                  />
-                </a>
+                {homeContent.hero.dashboardProjects.map((project, i) => (
+                  project.link ? (
+                    <a href={project.link} className="block" key={i}>
+                      <DashboardRow
+                        label={project.label}
+                        value={project.value}
+                        accent={project.accent}
+                      />
+                    </a>
+                  ) : (
+                    <DashboardRow
+                      key={i}
+                      label={project.label}
+                      value={project.value}
+                      accent={project.accent}
+                    />
+                  )
+                ))}
               </div>
               <div className="mt-6 rounded-2xl border border-slate-700/70 bg-slate-900/80 p-3">
                 <p className="text-xs text-slate-300 mb-1">
-                  Want to build something similar?
+                  {homeContent.hero.ctaCard.heading}
                 </p>
                 <p className="text-[11px] text-slate-400 mb-3">
-                  Tell us your use case – we’ll help you design an AI or
-                  automation blueprint and train your team to maintain it.
+                  {homeContent.hero.ctaCard.description}
                 </p>
                 <a href="/internships#apply-form">
                   <button className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 py-2 text-xs font-semibold text-slate-950 hover:from-cyan-400 hover:to-fuchsia-400 transition">
-                    Talk to us / Apply now
+                    {homeContent.hero.ctaCard.buttonText}
                   </button>
                 </a>
               </div>
@@ -140,67 +127,32 @@ export default function Home() {
         <FadeInSection>
           <div className="max-w-6xl mx-auto text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3">
-              AI & Automation Services
+              {homeContent.services.heading}
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
-              We work with teams to design, build, and deploy AI agents, RPA
-              workflows, and intelligent document pipelines – and then train
-              your people to run them.
+              {homeContent.services.description}
             </p>
           </div>
         </FadeInSection>
 
         <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
-          <FadeInSection>
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
-              <h3 className="text-xl font-semibold mb-2 text-cyan-300">
-                AI Agent Solutions
-              </h3>
-              <p className="text-sm text-slate-300 mb-4">
-                Custom AI agents for support, document Q&A, lead qualification,
-                and internal copilots using OpenAI, LangChain, and vector DBs.
-              </p>
-              <ul className="text-xs text-slate-400 space-y-1.5 text-left list-disc list-inside">
-                <li>RAG-based knowledge bots</li>
-                <li>Document understanding assistants</li>
-                <li>Workflow-integrated chatbots</li>
-              </ul>
-            </div>
-          </FadeInSection>
-
-          <FadeInSection className="delay-100">
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
-              <h3 className="text-xl font-semibold mb-2 text-fuchsia-300">
-                RPA & Intelligent Automation
-              </h3>
-              <p className="text-sm text-slate-300 mb-4">
-                End-to-end automation using Automation Anywhere, ABBYY Vantage,
-                and custom APIs for finance, HR, and operations teams.
-              </p>
-              <ul className="text-xs text-slate-400 space-y-1.5 text-left list-disc list-inside">
-                <li>IDP for invoices, forms, KYC</li>
-                <li>Email & document workflows</li>
-                <li>Bot architecture & governance</li>
-              </ul>
-            </div>
-          </FadeInSection>
-
-          <FadeInSection className="delay-200">
-            <div className="h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float">
-              <h3 className="text-xl font-semibold mb-2 text-emerald-300">
-                AI Upskilling & Co-build
-              </h3>
-              <p className="text-sm text-slate-300 mb-4">
-                Hybrid model where we co-build your first use cases while
-                training your team through bootcamps, projects, and internships.
-              </p>
-              <ul className="text-xs text-slate-400 space-y-1.5 text-left list-disc list-inside">
-                <li>Internal AI playbook design</li>
-                <li>Hands-on bootcamps & labs</li>
-                <li>Mentored capstone projects</li>
-              </ul>
-            </div>
-          </FadeInSection>
+          {homeContent.services.cards.map((card, i) => (
+            <FadeInSection key={i} className={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+              <div className={`h-full rounded-3xl border border-white/10 bg-slate-900/70 p-6 backdrop-blur shadow-md shadow-cyan-500/10 aidtd-float`}>
+                <h3 className={`text-xl font-semibold mb-2 text-${card.color}-300`}>
+                  {card.title}
+                </h3>
+                <p className="text-sm text-slate-300 mb-4">
+                  {card.description}
+                </p>
+                <ul className="text-xs text-slate-400 space-y-1.5 text-left list-disc list-inside">
+                  {card.features.map((feature, j) => (
+                    <li key={j}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            </FadeInSection>
+          ))}
         </div>
       </section>
 
@@ -210,32 +162,29 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-                Why AIDT&D?
+                {homeContent.why.heading}
               </h2>
               <p className="text-sm md:text-base text-slate-300 mb-4">
-                We blend a delivery studio and an education lab: real client
-                projects on one side, structured learning paths on the other.
+                {homeContent.why.description}
               </p>
               <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
-                <li>Hands-on AI & Automation builds, not just theory.</li>
-                <li>Pathways from beginner to project-ready contributor.</li>
-                <li>Exposure to real-world tools and workflows.</li>
+                {homeContent.why.benefits.map((benefit, i) => (
+                  <li key={i}>{benefit}</li>
+                ))}
               </ul>
             </div>
             <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6">
               <h3 className="text-lg font-semibold text-cyan-300 mb-2">
-                For Students & Early Professionals
+                {homeContent.why.forStudents.title}
               </h3>
               <p className="text-sm text-slate-300 mb-3">
-                Join our courses and internships to work on practical AI &
-                automation projects under mentorship.
+                {homeContent.why.forStudents.description}
               </p>
               <h3 className="text-lg font-semibold text-fuchsia-300 mb-2 mt-4">
-                For Teams & Companies
+                {homeContent.why.forTeams.title}
               </h3>
               <p className="text-sm text-slate-300">
-                Engage with us for consulting, pilot builds, or full AI &
-                automation programs tailored to your use cases.
+                {homeContent.why.forTeams.description}
               </p>
             </div>
           </div>

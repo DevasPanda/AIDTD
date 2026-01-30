@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "badgeText": "AIDT&D | AI & Automation Studio",
+    "titleLine1": "Build",
+    "titleHighlight": "AI Agents",
+    "titleLine2": "& Automations that ship to production.",
+    "description": "We design AI & Automation solutions for businesses and train the next generation of builders through hands-on projects, internships, and bootcamps.",
+    "primaryButtonText": "Explore AI & Automation Services",
+    "secondaryButtonText": "View Training Tracks",
+    "stats": [
+      {
+        "title": "AI Agents • RPA • IDP",
+        "description": "OpenAI · LangChain · Automation Anywhere · ABBYY"
+      },
+      {
+        "title": "Education + Services",
+        "description": "Consulting, builds, internships & mentorship"
+      }
+    ],
+    "dashboardProjects": [
+      {
+        "label": "Resume Screening Agent",
+        "value": "Deployed",
+        "accent": "emerald"
+      },
+      {
+        "label": "Invoice Extraction (IDP + RPA)",
+        "value": "In Progress",
+        "accent": "cyan"
+      },
+      {
+        "label": "GenAI Knowledge Bot",
+        "value": "Prototype",
+        "accent": "fuchsia"
+      },
+      {
+        "label": "AI Demo Combat Training",
+        "value": "In Progress",
+        "accent": "cyan",
+        "link": "/train-demo"
+      }
+    ],
+    "ctaCard": {
+      "heading": "Want to build something similar?",
+      "description": "Tell us your use case – we'll help you design an AI or automation blueprint and train your team to maintain it.",
+      "buttonText": "Talk to us / Apply now"
+    }
+  },
+  "services": {
+    "heading": "AI & Automation Services",
+    "description": "We work with teams to design, build, and deploy AI agents, RPA workflows, and intelligent document pipelines – and then train your people to run them.",
+    "cards": [
+      {
+        "title": "AI Agent Solutions",
+        "description": "Custom AI agents for support, document Q&A, lead qualification, and internal copilots using OpenAI, LangChain, and vector DBs.",
+        "color": "cyan",
+        "features": [
+          "RAG-based knowledge bots",
+          "Document understanding assistants",
+          "Workflow-integrated chatbots"
+        ]
+      },
+      {
+        "title": "RPA & Intelligent Automation",
+        "description": "End-to-end automation using Automation Anywhere, ABBYY Vantage, and custom APIs for finance, HR, and operations teams.",
+        "color": "fuchsia",
+        "features": [
+          "IDP for invoices, forms, KYC",
+          "Email & document workflows",
+          "Bot architecture & governance"
+        ]
+      },
+      {
+        "title": "AI Upskilling & Co-build",
+        "description": "Hybrid model where we co-build your first use cases while training your team through bootcamps, projects, and internships.",
+        "color": "emerald",
+        "features": [
+          "Internal AI playbook design",
+          "Hands-on bootcamps & labs",
+          "Mentored capstone projects"
+        ]
+      }
+    ]
+  },
+  "why": {
+    "heading": "Why AIDT&D?",
+    "description": "We blend a delivery studio and an education lab: real client projects on one side, structured learning paths on the other.",
+    "benefits": [
+      "Hands-on AI & Automation builds, not just theory.",
+      "Pathways from beginner to project-ready contributor.",
+      "Exposure to real-world tools and workflows."
+    ],
+    "forStudents": {
+      "title": "For Students & Early Professionals",
+      "description": "Join our courses and internships to work on practical AI & automation projects under mentorship."
+    },
+    "forTeams": {
+      "title": "For Teams & Companies",
+      "description": "Engage with us for consulting, pilot builds, or full AI & automation programs tailored to your use cases."
+    }
+  }
+}

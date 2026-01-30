@@ -1,0 +1,59 @@
+{
+  "title": "Real-World AI & Automation Internships",
+  "subtitle": "AIDT&D Internships",
+  "description": "Our internships are not classroom simulations. You work on real projects, guided by mentors, and build a portfolio that actually proves your capability in AI, RPA, and intelligent automation.",
+  "programs": [
+    {
+      "name": "AI Agent Intern",
+      "label": "Internship Path",
+      "description": "Work on chatbot systems, internal copilots, and AI assistants using modern GenAI stack and RAG patterns.",
+      "responsibilities": [
+        "Design AI task flows and prompts",
+        "Build knowledge bots on real documents",
+        "Deploy basic AI agents to test users"
+      ],
+      "color": "cyan"
+    },
+    {
+      "name": "RPA Automation Intern",
+      "label": "Internship Path",
+      "description": "Create automation workflows for document-heavy business processes using RPA tools.",
+      "responsibilities": [
+        "Build and test automation bots",
+        "Integrate email, spreadsheets, and APIs",
+        "Work on invoice / KYC / back-office flows"
+      ],
+      "color": "fuchsia"
+    },
+    {
+      "name": "Full Stack AI Intern",
+      "label": "Internship Path",
+      "description": "Combine frontend, backend, and AI integration to build production-style systems.",
+      "responsibilities": [
+        "Build AI-powered dashboards and tools",
+        "Work with REST APIs & basic databases",
+        "Get exposure to deployment workflows"
+      ],
+      "color": "emerald"
+    }
+  ],
+  "process": {
+    "heading": "How the Internship Works",
+    "steps": [
+      "Apply Online",
+      "Screening Call",
+      "Training + Project",
+      "Certification & Placement Support"
+    ]
+  },
+  "application": {
+    "heading": "Apply for an Internship at AIDT&D",
+    "description": "Share a few details about yourself and the kind of work you want to do. We'll review your application and get back to you with next steps.",
+    "benefits": [
+      "Remote & hybrid options depending on project",
+      "Focus on real deliverables, not just certificates",
+      "Support with portfolio, resume & interviews"
+    ],
+    "note": "Note: Seats are limited per cohort. Shortlisted candidates will be contacted via email or phone."
+  }
+}

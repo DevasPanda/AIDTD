@@ -1,0 +1,78 @@
+{
+  "title": "AI & Automation Courses",
+  "subtitle": "AIDT&D Learning Tracks",
+  "description": "Structured, hands-on programs designed to take you from foundations to project-ready in AI agents, RPA, and intelligent document processing.",
+  "courses": [
+    {
+      "level": "Level 01",
+      "name": "AI & Programming Foundations",
+      "description": "Build solid fundamentals in programming and AI concepts so you can follow and implement modern AI & automation solutions with confidence.",
+      "topics": [
+        "Python basics, APIs, and JSON",
+        "Git & project structure basics",
+        "Intro to prompt engineering & LLMs"
+      ],
+      "idealFor": "Ideal for students or professionals transitioning into AI & automation from non-CS or non-dev backgrounds.",
+      "buttonText": "Enquire about this track",
+      "color": "emerald"
+    },
+    {
+      "level": "Level 02",
+      "name": "AI Agents & RAG Systems",
+      "description": "Learn how to build practical AI agents: chatbots, knowledge assistants, and workflow copilots using modern LLM tooling.",
+      "topics": [
+        "OpenAI, LangChain & vector databases",
+        "RAG (Retrieval Augmented Generation) patterns",
+        "Building & deploying simple AI agents"
+      ],
+      "idealFor": "Best suited for learners who already understand basic coding and want to work specifically on GenAI solutions.",
+      "buttonText": "Get syllabus & roadmap",
+      "color": "cyan",
+      "featured": true
+    },
+    {
+      "level": "Level 03",
+      "name": "RPA & Intelligent Document Processing",
+      "description": "Combine RPA platforms and IDP tools to automate repetitive, document-heavy workflows end-to-end.",
+      "topics": [
+        "Automation Anywhere & bot design basics",
+        "ABBYY Vantage / IDP concepts",
+        "Invoice, KYC & email automation use cases"
+      ],
+      "idealFor": "Great for those targeting automation roles in operations, finance, and shared services teams.",
+      "buttonText": "Join RPA & IDP cohort",
+      "color": "fuchsia",
+      "featured": true
+    },
+    {
+      "level": "Level 04",
+      "name": "Capstone & Internship Readiness",
+      "description": "Work on a guided project that mimics a real client engagement and prepare your portfolio and profile for internships.",
+      "topics": [
+        "End-to-end AI or automation project",
+        "Code reviews & architecture walkthroughs",
+        "Resume, LinkedIn & interview prep for roles"
+      ],
+      "idealFor": "Often taken along with or after internships to clearly showcase your skills to future employers.",
+      "buttonText": "Talk to mentor / counsellor",
+      "color": "emerald",
+      "featured": true
+    }
+  ],
+  "howItWorks": {
+    "heading": "How the learning journey works",
+    "description": "You don't have to take every track at once. We design a path based on your current skills, time, and goals.",
+    "steps": [
+      "We understand your background & target roles.",
+      "We recommend 1–2 tracks to start with.",
+      "You learn by building mini-projects, not just watching.",
+      "We connect your progress with internship / project work."
+    ],
+    "cta": {
+      "heading": "Not sure where to begin?",
+      "description": "Share a bit about your background and we'll suggest a track that fits you best.",
+      "buttonText": "Request a free guidance call",
+      "disclaimer": "No spam. Just an honest conversation about whether AIDT&D is the right fit for you."
+    }
+  }
+}

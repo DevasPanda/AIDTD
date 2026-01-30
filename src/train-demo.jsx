@@ -326,7 +326,7 @@ export default function TrainDemo() {
               onClick={startCalibration}
               style={{
                 position: "absolute",
-                bottom: "20px", // Adjusted for smaller screens
+                bottom: "100px", // Adjusted for smaller screens
                 left: "50%",
                 transform: "translateX(-50%)",
                 padding: "10px 16px", // Adjusted for smaller screens
