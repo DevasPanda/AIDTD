@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Bottom Row */}
           <div className="text-center text-sm text-slate-400">
-            © {new Date().getFullYear()} AIDT&amp;D. All rights reserved.
+            © 2025 AIDT&amp;D. All rights reserved.
           </div>
         </div>
       </footer>
