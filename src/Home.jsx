@@ -52,13 +52,30 @@ export default function Home() {
                   </button>
                 </a>
               </div>
-              <div className="flex flex-wrap gap-6 text-xs md:text-sm text-slate-400">
+              <div className="flex flex-wrap gap-6 text-xs md:text-sm text-slate-400 mb-8">
                 {homeContent.hero.stats.map((stat, i) => (
                   <div key={i}>
                     <div className="font-semibold text-slate-100">
                       {stat.title}
                     </div>
                     <div>{stat.description}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Metrics strip */}
+              <div className="grid grid-cols-3 gap-3">
+                {homeContent.hero.metrics.map((m, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl border border-white/10 bg-slate-900/60 px-3 py-3 text-center backdrop-blur"
+                  >
+                    <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                      {m.value}
+                    </div>
+                    <div className="text-[10px] md:text-xs text-slate-400 mt-0.5 leading-tight">
+                      {m.label}
+                    </div>
                   </div>
                 ))}
               </div>

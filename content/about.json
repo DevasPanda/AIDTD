@@ -1,7 +1,7 @@
 {
-  "title": "Building the Next Wave of AI & Automation Talent",
+  "title": "Your AI Development Partner — and Training Ground",
   "subtitle": "About AIDT&D",
-  "description": "AIDT&D (AI, Digital Transformation & Development) is a studio and training space where modern AI agents, RPA automations, and real-world projects meet structured learning and mentoring.",
+  "description": "AIDT&D (AI, Digital Transformation & Development) is an AI solutions studio and training provider. We build production AI applications and automations for businesses, and run structured programs that turn motivated learners into hands-on AI builders.",
   "mission": {
     "title": "Our Mission",
     "description": "To make AI and automation skills truly accessible by combining hands-on projects, mentorship, and real client work so that learners don't just collect certificates – they become confident builders.",
@@ -15,22 +15,22 @@
   "story": {
     "heading": "Our Story",
     "paragraphs": [
-      "AIDT&D was born from a simple observation: there is a huge gap between what most courses teach and what teams actually need when they want to ship AI or automation into production.",
-      "On one side, we saw students and professionals stuck in endless theory and tool-checklists. On the other side, we saw organisations struggling to find people who can design, build, and maintain AI agents, RPA workflows, and document understanding solutions on real infrastructure.",
-      "AIDT&D exists to sit in the middle – as a studio that ships real solutions and a training ecosystem that prepares people to work on those solutions from day one."
+      "AIDT&D was born from a simple observation: there's a gap between what businesses need from AI and what most vendors or courses actually deliver.",
+      "Companies want production AI — applications that integrate with their data, agents that handle real workflows, and automations that don't fall apart after the first edge case. At the same time, students and career changers want practical exposure to real AI work, not just another certification.",
+      "AIDT&D sits in the middle: we build real AI applications and automations for businesses, and we run the training programs and internships that grow the talent capable of doing the same."
     ],
     "highlights": [
       {
-        "title": "Studio + Academy:",
-        "description": "We both build solutions and train people on the same stack."
+        "title": "Build + Train:",
+        "description": "We ship production AI for clients and run training programs on the same stack — both sides make each other stronger."
       },
       {
         "title": "Project-first:",
-        "description": "Every track is anchored around real-world use cases, not just slides."
+        "description": "Every engagement — for clients or learners — is anchored in real deliverables, not slides."
       },
       {
         "title": "Talent pipeline:",
-        "description": "Interns and learners can grow into contributors on live projects."
+        "description": "Interns and learners grow into contributors on live projects, bridging the gap between talent and industry."
       }
     ]
   },
@@ -38,32 +38,32 @@
     "heading": "What We Do",
     "services": [
       {
-        "title": "AI & Automation Studio",
-        "description": "We work with teams to design and implement AI agents, RPA workflows, and intelligent document processing pipelines.",
+        "title": "AI Application Development",
+        "description": "We design and build custom AI-powered applications for businesses — from internal tools and workflow automation to full-stack customer-facing AI products.",
         "features": [
-          "AI agents for support, ops, and internal tools",
-          "IDP for invoices, KYC, and forms",
-          "RPA bots for repetitive back-office work"
+          "Custom AI apps with LLM & RAG backends",
+          "AI-powered dashboards, portals & tools",
+          "End-to-end builds: design, dev & deployment"
         ],
         "color": "cyan"
       },
       {
-        "title": "Training Programs",
-        "description": "We run focused programs on AI agents, RPA, and full stack automation – with labs, assignments, and mentor feedback.",
+        "title": "AI Agents & Automation",
+        "description": "We build autonomous AI agents, RPA workflows, and intelligent document pipelines that save time and eliminate manual bottlenecks.",
         "features": [
-          "Short bootcamps and intensive tracks",
-          "Beginner-friendly pathways into production work",
-          "Capstone projects inspired by real client work"
+          "AI agents for support, ops & internal copilots",
+          "IDP for invoices, KYC, and forms",
+          "RPA bots for repetitive back-office work"
         ],
         "color": "fuchsia"
       },
       {
-        "title": "Internships & Co-build",
-        "description": "We invite learners to collaborate on live or simulated projects, acting as a bridge between training and industry.",
+        "title": "Training, Internships & Co-build",
+        "description": "We run structured learning programs and offer internships on live projects — and a co-build model where we upskill your team as we deliver.",
         "features": [
+          "Bootcamps on AI agents, RPA & full-stack AI",
           "Mentored internships with real responsibilities",
-          "Co-build model: we ship together with your team",
-          "Portfolio-building and interview preparation"
+          "Team upskilling alongside project delivery"
         ],
         "color": "emerald"
       }
@@ -96,16 +96,16 @@
     ]
   },
   "cta": {
-    "heading": "Want to Work or Learn with AIDT&D?",
-    "description": "Whether you're exploring internships, looking to upskill your team, or want to discuss an AI / automation use case, we'd love to hear from you.",
+    "heading": "Ready to Build Something with AI?",
+    "description": "Whether you need a production AI application, want to automate a workflow, are exploring internships, or want to upskill your team — we'd love to hear from you.",
     "buttons": [
       {
-        "text": "Explore Internships",
+        "text": "Discuss Your Project",
         "link": "/internships#apply-form",
         "primary": true
       },
       {
-        "text": "Talk to Us",
+        "text": "Explore Internships & Training",
         "primary": false
       }
     ]
