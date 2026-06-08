@@ -87,6 +87,28 @@
       }
     ]
   },
+  "product": {
+    "badge": "New Product",
+    "headline": "Introducing AI Revenue Intelligence",
+    "subheadline": "from first call to customer success",
+    "description": "Record every marketing and sales call. Let AI qualify leads, score deals, flag churn risks, and surface expansion opportunities — all in one unified pipeline.",
+    "ctaPrimary": "Get early access",
+    "ctaPrimaryUrl": "https://app.aidtd.in",
+    "ctaSecondary": "See how it works",
+    "features": [
+      { "icon": "🎙️", "label": "Call recording & transcription" },
+      { "icon": "🤖", "label": "AI lead scoring (BANT / MEDDIC)" },
+      { "icon": "📈", "label": "Deal intelligence & forecasting" },
+      { "icon": "💚", "label": "Customer health & CSM" }
+    ],
+    "earlyAccess": {
+      "heading": "Be among the first to try it",
+      "body": "We're onboarding early design partners. Get full access, shape the product, and lock in founder pricing.",
+      "cta": "Request early access",
+      "ctaUrl": "https://app.aidtd.in/signup",
+      "note": "No credit card required · Indian SaaS · GDPR-ready"
+    }
+  },
   "why": {
     "heading": "Why AIDT&D?",
     "description": "We are both a delivery studio and an education lab — real client projects on one side, structured learning paths on the other. That makes us uniquely positioned to build and teach.",

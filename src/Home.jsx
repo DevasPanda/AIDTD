@@ -134,6 +134,156 @@ export default function Home() {
       {/* Tech stack scrolling strip */}
       <TechStackStrip />
 
+      {/* Product Hero Section */}
+      <section id="product" className="relative overflow-hidden py-20 px-4 bg-slate-950">
+        <div className="pointer-events-none absolute top-0 left-1/4 h-80 w-80 rounded-full bg-cyan-500 blur-[120px] opacity-50" />
+        <div className="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-fuchsia-500 blur-[120px] opacity-50" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <FadeInSection>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-slate-900/60 px-3 py-1 text-xs md:text-sm text-emerald-300 mb-5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>{homeContent.product.badge}</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-semibold mb-4 leading-tight">
+                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-fuchsia-400 bg-clip-text text-transparent">
+                  {homeContent.product.headline}
+                </span>
+                <br />
+                <span className="text-slate-200">{homeContent.product.subheadline}</span>
+              </h2>
+              <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-8">
+                {homeContent.product.description}
+              </p>
+
+              {/* Feature pills */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {homeContent.product.features.map((f, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 text-sm text-slate-200 backdrop-blur"
+                  >
+                    <span>{f.icon}</span>
+                    <span>{f.label}</span>
+                  </span>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap justify-center gap-4">
+                <a href={homeContent.product.ctaPrimaryUrl} target="_blank" rel="noopener noreferrer">
+                  <button className="rounded-full bg-cyan-500 px-6 py-2.5 font-semibold text-slate-950 hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
+                    {homeContent.product.ctaPrimary} →
+                  </button>
+                </a>
+                <a href="#how-it-works">
+                  <button className="rounded-full border border-slate-600 px-6 py-2.5 font-semibold hover:border-cyan-400 hover:text-cyan-300 transition">
+                    {homeContent.product.ctaSecondary}
+                  </button>
+                </a>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
+      <section id="how-it-works" className="relative py-20 px-4 bg-slate-950">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-semibold mb-3">How it Works</h2>
+              <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto">
+                Four steps from first conversation to customer success
+              </p>
+            </div>
+          </FadeInSection>
+
+          <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-0">
+            {[
+              { step: 1, icon: "📞", title: "Marketing call recorded", desc: "A bot joins your Zoom/Meet call and records + transcribes with speaker diarisation" },
+              { step: 2, icon: "🧠", title: "AI qualifies the lead", desc: "Claude API scores the lead on BANT, extracts pain points, and recommends next action" },
+              { step: 3, icon: "🎯", title: "Sales deal tracked", desc: "Rep gets deal intelligence, call coaching nudges, and win probability in real time" },
+              { step: 4, icon: "💚", title: "CSM health monitoring", desc: "Post-sale, AI tracks customer sentiment, flags churn risk, and surfaces expansion signals" },
+            ].map((s, i) => (
+              <React.Fragment key={i}>
+                <FadeInSection className={i > 0 ? `delay-${i * 100}` : ""}>
+                  <div className="flex-1 bg-slate-900/60 border border-white/10 rounded-2xl backdrop-blur p-6 text-center">
+                    <div className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-slate-950 text-xs font-bold mb-3 mx-auto">
+                      {s.step}
+                    </div>
+                    <div className="text-3xl mb-3">{s.icon}</div>
+                    <h3 className="text-base font-semibold text-slate-100 mb-2">{s.title}</h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">{s.desc}</p>
+                  </div>
+                </FadeInSection>
+                {i < 3 && (
+                  <div className="hidden md:flex items-center justify-center px-2 text-slate-600 text-xl flex-shrink-0">→</div>
+                )}
+                {i < 3 && (
+                  <div className="md:hidden flex justify-center text-slate-600 text-xl py-1">↓</div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why AIDTD Revenue Intelligence */}
+      <section className="relative py-20 px-4 bg-slate-950">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-semibold mb-3">Why teams choose AIDTD</h2>
+            </div>
+          </FadeInSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: "🔍", title: "Capture signals early", body: "Most tools start at the demo call. We start at the marketing conversation — where buying intent is born." },
+              { icon: "⚡", title: "Real-time AI coaching", body: "Reps get live nudges during calls: talking too much, missing BANT questions, competitor mentioned." },
+              { icon: "🔗", title: "One unified timeline", body: "Every contact has a single timeline from first touch to renewal — no CRM silos, no blind spots." },
+            ].map((f, i) => (
+              <FadeInSection key={i} className={i > 0 ? `delay-${i * 100}` : ""}>
+                <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 backdrop-blur h-full">
+                  <div className="text-3xl mb-4">{f.icon}</div>
+                  <h3 className="text-lg font-semibold text-slate-100 mb-2">{f.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{f.body}</p>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Early Access CTA Banner */}
+      <section className="relative py-20 px-4 bg-slate-950">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        <div className="max-w-3xl mx-auto">
+          <FadeInSection>
+            <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-950/40 to-fuchsia-950/40 p-10 text-center backdrop-blur shadow-[0_0_80px_rgba(56,189,248,0.15)]">
+              <h2 className="text-3xl md:text-4xl font-semibold mb-3">
+                {homeContent.product.earlyAccess.heading}
+              </h2>
+              <p className="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8">
+                {homeContent.product.earlyAccess.body}
+              </p>
+              <a href={homeContent.product.earlyAccess.ctaUrl} target="_blank" rel="noopener noreferrer">
+                <button className="rounded-full bg-cyan-500 px-8 py-3 text-base font-semibold text-slate-950 hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
+                  {homeContent.product.earlyAccess.cta}
+                </button>
+              </a>
+              <p className="mt-4 text-xs text-slate-500">
+                {homeContent.product.earlyAccess.note}
+              </p>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
       {/* AI & Automation Services */}
       <section
         id="services"

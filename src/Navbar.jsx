@@ -40,12 +40,21 @@ export default function Navbar() {
   const handleServicesClick = (e) => {
     e.preventDefault();
     if (path === "/") {
-      // Already on home page, scroll to services section
       scrollToSection("services");
     } else {
-      // Navigate to home page with hash, then scroll after navigation
       navigate("/");
       setTimeout(() => scrollToSection("services"), 100);
+    }
+    setOpen(false);
+  };
+
+  const handleProductClick = (e) => {
+    e.preventDefault();
+    if (path === "/") {
+      scrollToSection("product");
+    } else {
+      navigate("/");
+      setTimeout(() => scrollToSection("product"), 100);
     }
     setOpen(false);
   };
@@ -79,6 +88,18 @@ export default function Navbar() {
             }`}
           >
             Home
+          </a>
+
+          {/* Product – section on Home */}
+          <a
+            href="/#product"
+            onClick={handleProductClick}
+            className={`${baseLink} ${inactive} inline-flex items-center gap-1.5`}
+          >
+            Product
+            <span className="rounded-full bg-emerald-500/20 border border-emerald-500/40 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-300 leading-none">
+              New
+            </span>
           </a>
 
           {/* AI & Automation – section on Home */}
@@ -160,6 +181,16 @@ export default function Navbar() {
               }`}
             >
               Home
+            </a>
+            <a
+              href="/#product"
+              onClick={handleProductClick}
+              className={`${baseLink} w-max ${inactive} inline-flex items-center gap-1.5`}
+            >
+              Product
+              <span className="rounded-full bg-emerald-500/20 border border-emerald-500/40 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-300 leading-none">
+                New
+              </span>
             </a>
             <a
               href="/#services"
